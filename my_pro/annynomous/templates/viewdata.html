@@ -1,0 +1,38 @@
+<form method="post">
+    <input type="submit" name='btn' id='btn' value='View'> 
+    {% csrf_token %}
+</form>
+{% if output %}
+<h1>{{output}}</h1>
+{% endif %}
+
+
+
+
+
+<table border="2px solid black " cellpadding="3" cellspacing="0">
+    <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Mobile</th>
+        <th>Password</th>
+        <th>Acion</th>
+    </tr>
+    {% for user in users  %}
+    <form method="post">
+        <tr>
+            <td> {{user.name}} </td>
+            <td> {{user.email}} </td>
+            <td> {{user.mobile}} </td>
+            <td> {{user.password}} </td>
+            <td> <input type="hidden" name='email' id='email' value='{{user.email}}'> </td>
+            <td> <input type="submit" name='btn' id='btn' value='Edit'> </td>
+            <td> <input type='submit' name='btn' id='btn' value='Delete'> </td>
+        </tr>
+        {% csrf_token %}
+    </form>
+    {% endfor %}
+
+
+
+</table>

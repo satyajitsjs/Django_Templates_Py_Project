@@ -1,0 +1,20 @@
+<table border="2px solid " cellspacing="0" cellpadding="5" >
+    <h1>This is the contact view</h1> 
+    <br>
+    <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Mobile</th>
+        <th>Message</th>
+    </tr>
+    {% for c  in contact %}
+    <form method="post">
+        <tr>
+            <th> {{c.name}} </th>
+            <th> {{c.email}} </th>
+            <th> {{c.mobile}} </th>
+            <th> {{c.message}} </th>
+        </tr>
+    </form>
+    {% endfor %}
+</table>

@@ -1,0 +1,19 @@
+{% for user in users %}
+<form method="post" action="/update">
+    Name:
+    <input type="text" name="name" value="{{user.name}}">
+    <br>
+    Email
+    <input type="text" name="email" value="{{user.email}}">
+    <br>
+    Mobile
+    <input type="text" name="mobile" value="{{user.mobile}}">
+    <br>
+    Password
+    <input type="text" name="password" value="{{user.password}}">
+    <br>
+    <input type="submit" name="btn" value="update">
+{% csrf_token %}
+</form>
+
+{% endfor %}
